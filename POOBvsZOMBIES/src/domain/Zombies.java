@@ -13,8 +13,13 @@ public abstract class Zombies extends Character {
     /**
      * Constructor for objects of class Zombies
      */
-    public Zombies(int hitPointes, int posY, int costBrains) {
-        super(hitPointes,costBrains , 9, posY);
+    public Zombies(int hitPointes, int costBrains) {
+        super(hitPointes);
+        this.costBrains = costBrains;
 
+    }
+
+    public int getCostBrains() {
+        return costBrains;
     }
 }

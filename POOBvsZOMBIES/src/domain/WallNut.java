@@ -10,7 +10,7 @@ public class WallNut extends Defensive{
     /**
      * Constructor for objects of class WallNut
      */
-    public WallNut(int posX, int posY) {
-        super(4000, 50, posX, posY );
+    public WallNut() {
+        super(4000, 50);
     }
 }

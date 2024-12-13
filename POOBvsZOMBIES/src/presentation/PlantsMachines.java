@@ -17,9 +17,6 @@ import java.io.File;
  */
 public class PlantsMachines extends JFrame {
 
-    private Clip backgroundMusic;
-    private JPanel select;
-
     /**
      * Constructor for objects of class PlantsMachines
      */
@@ -29,6 +26,13 @@ public class PlantsMachines extends JFrame {
         prepareActions();
     }
 
+    /**
+     * Configures the actions to be performed when the window is about to close.
+     * This method sets the default close operation to do nothing on close,
+     * thereby preventing the window from closing automatically. It adds a custom
+     * WindowListener that overrides the windowClosing method to prompt the user
+     * for confirmation before exiting the application.
+     */
     public void prepareActions(){
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -38,6 +42,14 @@ public class PlantsMachines extends JFrame {
             }
         });
     }
+
+
+    /**
+     * Prompts the user with a confirmation dialog to confirm if they wish to close the application.
+     * If the user confirms the action, the current window is disposed and the application is terminated.
+     * The dialog presents "Yes" and "No" options for the user to choose from.
+     * Utilizing this method ensures that users do not accidentally close the application without confirmation.
+     */
     public void exit(){
         int confirm = JOptionPane.showConfirmDialog(this, "Realmente desea cerrar?", "Confirmar cierre", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
@@ -46,35 +58,46 @@ public class PlantsMachines extends JFrame {
         }
     }
 
+    /**
+     * Prepares the user interface elements of the application window.
+     *
+     * This method sets the size of the window to half the width and height of the user's screen
+     * and centers the window on the screen by setting its location relative to null. It also
+     * initializes background music by playing a specified audio file in a continuous loop.
+     * Furthermore, this method delegates additional UI component preparation to the
+     * prepareElementsBoard method.
+     */
     public void prepareElements() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setSize(screenSize.width / 2, screenSize.height / 2);
         setLocationRelativeTo(null);
-        playBackgroundMusic("presentation/resources/audio/selectmode.wav");
+        AudioManager.playBackgroundMusic("presentation/resources/audio/zombiemachines.wav");
         prepareElementsBoard();
     }
 
-    private void playBackgroundMusic(String musicPath) {
-        try {
-            File musicFile = new File(musicPath);
-            if (musicFile.exists()) {
-                AudioInputStream audioStream = AudioSystem.getAudioInputStream(musicFile);
-                backgroundMusic = AudioSystem.getClip();
-                backgroundMusic.open(audioStream);
-                backgroundMusic.loop(Clip.LOOP_CONTINUOUSLY);
-            } else {
-                System.out.println("Archivo de música no encontrado: " + musicPath);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    /**
+     * Initializes and prepares the button panel for the application window.
+     *
+     * This method creates a JPanel with a GridLayout to host two buttons: "PlantsIntelligent"
+     * and "PlantsStrategic," each associated with an ImageIcon (empty in the current implementation).
+     * Both buttons share the same ActionListener, which stops the background music and disposes of the current window
+     * when clicked. After initializing the buttons, it adds them to the panel, which is then added to the current JFrame.
+     */
     public void prepareElementsBoard() {
         JPanel buttonPanel = new JPanel(new GridLayout(1, 2));
         JButton button1 = new JButton("PlantsIntelligent", new ImageIcon(""));
+        button1.addActionListener(e -> {
+            AudioManager.stopBackgroundMusic();
+
+            dispose();
+        });
         buttonPanel.add(button1);
         JButton button2 = new JButton("PlantsStrategic",new ImageIcon(""));
+        button2.addActionListener(e -> {
+            AudioManager.stopBackgroundMusic();
+
+            dispose();
+        });
         buttonPanel.add(button2);
         add(buttonPanel);
     }

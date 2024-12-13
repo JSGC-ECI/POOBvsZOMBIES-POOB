@@ -14,8 +14,8 @@ public abstract class Movement extends Zombies {
     /**
      * Constructor for objects of class Movement
      */
-    public Movement(int hitPoints, int posY, int damage, int costbrains ) {
-        super(hitPoints,posY, costbrains);
+    public Movement(int hitPoints, int damage, int costbrains ) {
+        super(hitPoints, costbrains);
         this.damage = damage;
         this.isMoving = isMoving;
     }

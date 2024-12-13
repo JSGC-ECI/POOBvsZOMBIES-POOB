@@ -11,7 +11,7 @@ public abstract class Defensive extends Plant {
     /**
      * Constructor for objects of class Defensive
      */
-    public Defensive(int hitPoints, int cost, int posX, int posY) {
-        super(hitPoints, cost, posX, posY);;
+    public Defensive(int hitPoints, int cost) {
+        super(hitPoints, cost);;
     }
 }

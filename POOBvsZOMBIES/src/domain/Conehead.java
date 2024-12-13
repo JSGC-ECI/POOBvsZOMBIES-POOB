@@ -11,8 +11,8 @@ public class Conehead extends Movement{
     /**
      * Constructor for objects of class Conehead
      */
-    public Conehead(int hitPoints, int posY, int damage, int costbrains) {
-        super(hitPoints, posY, damage, costbrains);
+    public Conehead() {
+        super(380, 100, 150);
     }
 
     /**

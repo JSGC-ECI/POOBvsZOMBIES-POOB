@@ -12,8 +12,8 @@ public abstract class Generate extends Zombies{
     /**
      * Constructor for objects of class Generate
      */
-    public Generate(int hitPointes, int posY, int damage, int costBrains, int brainValue) {
-        super(hitPointes, posY, costBrains);
+    public Generate(int hitPointes, int damage, int costBrains, int brainValue) {
+        super(hitPointes, costBrains);
         this.BrainValue = BrainValue;
     }
 

@@ -12,8 +12,8 @@ public class PotatoMine extends Defensive {
     /**
      * Constructor for objects of class PotatoMine
      */
-    public PotatoMine(int posX, int posY) {
-        super(100, 25, posX,posY);
+    public PotatoMine() {
+        super(100, 25);
     }
 
     public double getTime() {

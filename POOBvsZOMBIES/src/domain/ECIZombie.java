@@ -11,8 +11,8 @@ public class ECIZombie extends Movement {
     /**
      * Constructor for objects of class ECIZombie
      */
-    public ECIZombie(int posY) {
-        super(200, posY, 50, 250);
+    public ECIZombie() {
+        super(200, 50, 250);
     }
 
     /**
