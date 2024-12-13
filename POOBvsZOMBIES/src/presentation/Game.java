@@ -9,11 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-
-/**
- * The Game class manages the main functionality of a Plants vs. Zombies-inspired game.
- * It handles the game board setup, player actions, score updates, and game timer.
- */
 public class Game extends JFrame {
 
     private JPanel boardG;
@@ -40,13 +35,6 @@ public class Game extends JFrame {
     private JMenuItem Item5;
     private JMenuItem Item6;
 
-
-    /**
-     * Initializes a new instance of the Game class.
-     * This constructor sets up the Game by obtaining a singleton instance of the GameManager,
-     * configuring initial game parameters, and preparing the necessary game elements and actions.
-     * The game title is set, and the main game board, sun points, and brain points are initialized.
-     */
     public Game() {
         gameManager = GameManager.getInstance();
         gameManager.setGame(this);
@@ -57,42 +45,11 @@ public class Game extends JFrame {
         board = new Board(sunPoints, brainPoints);
     }
 
-    /**
-     * Updates the text of the sun points label to display the current amount of sun points.
-     * This method ensures that the update to the label's text is performed on the Event Dispatch Thread.
-     *
-     * @param sunPoints the current number of sun points to be displayed
-     */
     public void updateSunPointsLabel(int sunPoints) {
         SwingUtilities.invokeLater(() -> sunPointsLabel.setText("Sun Points: " + sunPoints));
     }
 
-    /**
-     * Updates the text of the brain points label to display the current amount of brain points.
-     * This method ensures that the update to the label's text is performed on the Event Dispatch Thread.
-     *
-     * @param brainPoints the current number of brain points to be displayed
-     */
-    public void updateBrainPointsLabel(int brainPoints) {
-        SwingUtilities.invokeLater(() -> brainPointsLabel.setText("Brain Points: " + brainPoints));
-    }
 
-    /**
-     * Prepares the initial visual and interactive elements of the game interface.
-     *
-     * This method sets up the main game window by configuring its size to half
-     * the screen dimensions and centering it on the screen. It also prompts the
-     * user for initial game values such as sun points and brain points. The game
-     * board and menu elements are then prepared, laying out the necessary components
-     * and interactive elements for gameplay.
-     *
-     * The method accomplishes the following actions:
-     * 1. Configures the window size to half of the screen's width and height.
-     * 2. Positions the window in the center of the screen.
-     * 3. Prompts the user to input initial game parameters.
-     * 4. Prepares the game board visual components and layout.
-     * 5. Sets up the menu structure required for the game.
-     */
     public void prepareElements() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setSize(screenSize.width / 2, screenSize.height / 2);
@@ -104,17 +61,6 @@ public class Game extends JFrame {
     }
 
 
-    /**
-     * Prepares the actions for the game, including handling window closing events.
-     *
-     * This method sets the default close operation to do nothing, preventing the
-     * window from closing immediately when the user attempts to close it. It also
-     * adds a window listener to handle the window closing event, prompting the user
-     * with a confirmation dialog to decide whether to exit the game.
-     *
-     * The method delegates the actual exit process to the `exit()` method if the
-     * user confirms the intention to close the game.
-     */
     public void prepareActions() {
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -125,18 +71,6 @@ public class Game extends JFrame {
         });
     }
 
-    /**
-     * Initiates the process for closing the game application.
-     *
-     * This method presents the user with a confirmation dialog to verify their intention
-     * to exit the game. If the user confirms, the method proceeds to dispose of the game
-     * window and terminates the application. It uses a modal confirmation dialog to ensure
-     * that the user explicitly acknowledges the desire to close the application, thereby
-     * preventing accidental termination.
-     *
-     * The confirmation dialog offers 'Yes' or 'No' options, only proceeding with the exit
-     * if the user selects 'Yes'.
-     */
     public void exit() {
         int confirm = JOptionPane.showConfirmDialog(this, "Realmente desea cerrar?", "Confirmar cierre", JOptionPane.YES_NO_OPTION);
         if (confirm == JOptionPane.YES_OPTION) {
@@ -145,24 +79,7 @@ public class Game extends JFrame {
         }
     }
 
-    /**
-     * Prompts the user to input initial values for the game, including sun points, brain points, and game time.
-     *
-     * This method uses dialog boxes to request input from the user and attempts to parse these inputs into integer values.
-     * If valid numbers are entered, a new GameManager instance is created with the specified values. In the event of
-     * invalid input (such as non-numeric values), an error message is displayed. The game state is then updated to reflect
-     * the entered values by updating the labels for sun points and brain points.
-     *
-     * The method performs the following actions:
-     * 1. Displays dialog boxes to prompt the user for sun points, brain points, and game time.
-     * 2. Parses input strings into integers.
-     * 3. Creates a new GameManager with the entered values if inputs are valid.
-     * 4. Displays an error message if any input is invalid.
-     * 5. Updates the labels for sun points and brain points with the new values.
-     *
-     * The method is essential for initializing game settings based on user input, ensuring that gameplay starts with
-     * the desired configurations.
-     */
+
     private void promptForInitialValues() {
         String sunInput = JOptionPane.showInputDialog(this, "Ingrese los puntos de sol iniciales:");
         String brainInput = JOptionPane.showInputDialog(this, "Ingrese los cerebros iniciales:");
@@ -179,31 +96,8 @@ public class Game extends JFrame {
         }
 
         updateSunPointsLabel(sunPoints);
-        updateBrainPointsLabel(brainPoints);
     }
 
-    /**
-     * Initializes and prepares the main elements of the game board for a Plants vs. Zombies style game.
-     * This method sets up the game's graphical user interface components and their layouts, including backgrounds,
-     * buttons, and points labels. It integrates features into regions of a border layout, allowing for a structured
-     * interface that displays plants and zombies, sun and brain points indicators, and a timer.
-     *
-     * The game board is divided into five sections:
-     * 1. The west region holds the main game panel with a layout for interaction buttons.
-     * 2. The center region contains a grid of interactive tiles where players can place plants.
-     * 3. The north region features a selection panel with buttons to choose various plant types.
-     * 4. The south region includes a selection panel to choose different zombie types.
-     * 5. The east region displays crucial game statistics such as sun and brain points along with remaining game time.
-     *
-     * The method also configures individual button properties, including visual settings and action listeners
-     * to handle player interactions. For each button within the plant and zombie selection sections,
-     * visual customization and event linking (such as selecting a plant or zombie) are implemented.
-     *
-     * A custom background image is applied to various panels, enhancing visual appeal. The method ensures
-     * that the game components are optimally laid out and interactive from the game start.
-     *
-     * Additionally, the game timer is initiated at the end of the setup to reflect the game's time dynamics.
-     */
     public void prepareElementsBoard() {
         game = new JPanel();
         game.setLayout(new BorderLayout());
@@ -274,43 +168,6 @@ public class Game extends JFrame {
         plants.add(button5);
         add(plants, BorderLayout.NORTH);
 
-        zombies = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                ImageIcon background = new ImageIcon("presentation/resources/images/Zombies/Targetas/PackagesDead.png");
-                int imageWidth = background.getIconWidth();
-                int imageHeight = background.getIconHeight();
-                int panelWidth = getWidth();
-                int panelHeight = getHeight();
-                int x = (panelWidth - imageWidth) / 2;
-                int y = (panelHeight - imageHeight) / 2;
-                g.drawImage(background.getImage(), x, y, this);
-            }
-        };
-        zombies.setLayout(new FlowLayout(FlowLayout.CENTER,-30, 0));
-        JButton buttonBasic = new JButton(new ImageIcon("presentation/resources/images/Zombies/Targetas/Basic.png"));
-        buttonBasic.addActionListener(e -> selectZombie("Basic"));
-        setInvisibleButton(buttonBasic);
-        zombies.add(buttonBasic);
-        JButton buttonConehead = new JButton(new ImageIcon("presentation/resources/images/Zombies/Targetas/Conehead.png"));
-        buttonConehead.addActionListener(e -> selectZombie("Conehead"));
-        setInvisibleButton(buttonConehead);
-        zombies.add(buttonConehead);
-        JButton buttonBuckethead = new JButton(new ImageIcon("presentation/resources/images/Zombies/Targetas/Buckethead.png"));
-        buttonBuckethead.addActionListener(e -> selectZombie("Buckethead"));
-        setInvisibleButton(buttonBuckethead);
-        zombies.add(buttonBuckethead);
-        JButton buttonBrainstein = new JButton(new ImageIcon("presentation/resources/images/Zombies/Targetas/Brainstein.png"));
-        buttonBrainstein.addActionListener(e -> selectZombie("Brainstein"));
-        setInvisibleButton(buttonBrainstein);
-        zombies.add(buttonBrainstein);
-        JButton buttonECIZombie = new JButton(new ImageIcon("presentation/resources/images/Zombies/Targetas/ECIZombie.png"));
-        buttonECIZombie.addActionListener(e -> selectZombie("ECIZombie"));
-        setInvisibleButton(buttonECIZombie);
-        zombies.add(buttonECIZombie);
-        add(zombies, BorderLayout.SOUTH);
-
         // Panel de puntos de sol y cerebros
         pointsPanel = new JPanel();
         pointsPanel.setLayout(new GridLayout(2, 1));
@@ -319,11 +176,6 @@ public class Game extends JFrame {
         sunPointsLabel.setHorizontalAlignment(SwingConstants.CENTER);
         sunPointsLabel.setFont(new Font("Arial", Font.BOLD, 16));
         pointsPanel.add(sunPointsLabel);
-
-        brainPointsLabel = new JLabel("Brain Points: " + brainPoints);
-        brainPointsLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        brainPointsLabel.setFont(new Font("Arial", Font.BOLD, 16));
-        pointsPanel.add(brainPointsLabel);
 
         timeLabel = new JLabel("Tiempo restante: " + gameManager.getGameTime() + " min");
         timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -336,20 +188,6 @@ public class Game extends JFrame {
     }
 
 
-    /**
-     * Initializes and starts the game timer which counts down every second.
-     * The timer updates the remaining game time displayed on the UI and manages
-     * the game's end when time runs out.
-     *
-     * The timer operates with a delay of one second (1000 milliseconds) and is associated
-     * with an ActionListener that checks the remaining time at each tick. If the time
-     * is greater than zero, it decreases the time by one second and updates the display
-     * label with the new time. Once the time reaches zero, the timer stops and a
-     * message dialog is shown indicating that the game has ended.
-     *
-     * The timer ensures that time-dependent game actions are performed consistently
-     * every second, contributing to the game flow.
-     */
     private void startGameTimer() {
         gameTimer = new Timer(1000, new ActionListener() {
             @Override
@@ -368,43 +206,16 @@ public class Game extends JFrame {
     }
 
 
-    /**
-     * Configures a JButton to be invisible by removing its default visual properties.
-     *
-     * This method modifies the button's appearance by setting several properties to
-     * give it an invisible look. These changes include making the button non-opaque,
-     * removing the content area fill, and not painting its border.
-     *
-     * @param button the JButton to be made invisible. The method alters its appearance
-     *               properties to ensure that the button does not display its background
-     *               and border, effectively rendering it invisible.
-     */
     private void setInvisibleButton(JButton button) {
         button.setOpaque(false);
         button.setContentAreaFilled(false);
         button.setBorderPainted(false);
     }
 
-
-    /**
-     * Selects a plant for use in the game by updating the currently selected plant.
-     *
-     * @param plant the name of the plant to be selected
-     */
     private void selectPlant(String plant) {
         selectedPlant = plant;
     }
 
-    /**
-     * Attempts to place the selected plant at the specified position on the game board.
-     * This method checks whether a plant has been selected and places it on the board
-     * if the position is valid and available. After placing the plant, it updates the button
-     * to display the plant's image and disables it to prevent further interaction.
-     *
-     * @param row the row index on the game board where the plant is to be placed
-     * @param col the column index on the game board where the plant is to be placed
-     * @param cellButton the JButton representing the cell on the board where the plant will be placed
-     */
     private void placePlant(int row, int col, JButton cellButton) {
         if (selectedPlant == null) {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona una planta primero.");
@@ -420,13 +231,6 @@ public class Game extends JFrame {
     }
 
 
-    /**
-     * Returns the file path to the GIF image associated with the specified plant name.
-     *
-     * @param plant the name of the plant for which the GIF file path is requested
-     * @return the file path to the corresponding plant GIF image; returns an empty
-     *         string if the plant name does not match any known plants
-     */
     private String getGifForPlant(String plant) {
         switch (plant) {
             case "Sunflower":
@@ -444,53 +248,6 @@ public class Game extends JFrame {
         }
     }
 
-
-    /**
-     * Selects a zombie for use in the game by updating the currently selected zombie.
-     *
-     * @param zombie the name of the zombie to be selected
-     */
-    private void selectZombie(String zombie) {
-        selectedZombie = zombie;
-    }
-
-
-    /**
-     * Places a zombie on the game board at the specified row and column using the specified button.
-     * If no zombie is currently selected, or if the column is not the last one, a message dialog will notify the user.
-     *
-     * @param row the row on the board where the zombie will be placed
-     * @param col the column on the board where the zombie will be placed; must be the last column
-     * @param cellButton the JButton that represents the cell on the board where the zombie will be placed
-     */
-    public void placeZombie(int row, int col, JButton cellButton) {
-        if (selectedZombie == null) {
-            JOptionPane.showMessageDialog(this, "Por favor, selecciona un zombie primero.");
-            return;
-        }
-        if (col != 9) {
-            JOptionPane.showMessageDialog(this, "Los zombis solo pueden ser colocados en la última columna.");
-            return;
-        }
-        if (GameManager.getInstance().placeZombie(board.getZombieByName(selectedZombie), row, col)) {
-            String gifPath = getGifForZombie(selectedZombie);
-            cellButton.setIcon(new ImageIcon(gifPath));
-            cellButton.setDisabledIcon(cellButton.getIcon());
-            cellButton.setEnabled(false);
-            selectedZombie = null;
-        }
-    }
-
-
-    /**
-     * Retrieves the file path for the GIF image corresponding to the specified zombie type.
-     *
-     * @param zombie the type of the zombie for which the GIF file path is needed.
-     *               This can be one of the following: "Basic", "Conehead", "Buckethead",
-     *               "Brainstein", or "ECIZombie".
-     * @return the file path to the GIF image as a string if the zombie type is recognized;
-     *         an empty string otherwise.
-     */
     private String getGifForZombie(String zombie) {
         switch (zombie) {
             case "Basic":
@@ -508,14 +265,6 @@ public class Game extends JFrame {
         }
     }
 
-    /**
-     * Prepares the menu bar and its menu items for the application window.
-     *
-     * This method initializes a `JMenuBar` and sets it to the current window.
-     * It creates a "Archivo" menu with several items: "Nuevo", "Abrir", "Guardar como",
-     * "Importar", "Exportar como", and "Salir". Each item is separated by a menu separator.
-     * The menu bar is constructed and added to the window to provide options for file operations.
-     */
     public void prepareElementsMenu() {
         this.menuBar = new JMenuBar();
         this.setJMenuBar(this.menuBar);
