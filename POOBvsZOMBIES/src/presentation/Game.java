@@ -166,6 +166,11 @@ public class Game extends JFrame {
         button5.addActionListener(e -> selectPlant("ECIPlant"));
         setInvisibleButton(button5);
         plants.add(button5);
+        JButton button6 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/Evolve.png"));
+        button6.addActionListener(e -> selectPlant("Evolve"));
+        setInvisibleButton(button6);
+        plants.add(button6);
+
         add(plants, BorderLayout.NORTH);
 
         // Panel de puntos de sol y cerebros
@@ -199,6 +204,12 @@ public class Game extends JFrame {
                 } else {
                     gameTimer.stop();
                     JOptionPane.showMessageDialog(Game.this, "¡Se acabó el tiempo! El juego ha terminado. En construccion");
+                    if (Board.winner()){
+                        JOptionPane.showMessageDialog(Game.this, "lAS PLANTAS YA HABIAN PERDIDO, GANARON LOS ZOMBIES");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(Game.this, "LOS ZOMBIES NO LLEGARON A LAS CASA, GANAN LAS PLANTAS");
+                    }
                 }
             }
         });
@@ -243,6 +254,8 @@ public class Game extends JFrame {
                 return "presentation/resources/images/Plantas/gif/PotatoMine.gif";
             case "ECIPlant":
                 return "presentation/resources/images/Plantas/Targetas/ECIPlant.gif";
+            case "Evolve":
+                return "presentation/resources/images/Plantas/gif/Evolve.gif";
             default:
                 return "";
         }

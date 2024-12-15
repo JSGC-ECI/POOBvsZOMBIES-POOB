@@ -3,12 +3,15 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 import domain.Zombies;
+import presentation.Game;
+
+import javax.swing.*;
 
 public class Board {
     private final int ROWS = 5;
-    private final int COLUMNS = 10;
-    private Cell[][] cells;
-    private boolean[] lawnMower;
+    private static final int COLUMNS = 10;
+    private static Cell[][] cells;
+    private static boolean[] lawnMower;
     private int sunPoints;
     private int brainPoints;
     private List<Zombies> zombies;
@@ -74,7 +77,7 @@ public class Board {
         }
     }
 
-    private void handlePodadora(int row) {
+    public static boolean handlePodadora(int row) {
         if (lawnMower[row]) {
             for (int j = 0; j < COLUMNS; j++) {
                 if (cells[row][j].hasZombie()) {
@@ -82,9 +85,18 @@ public class Board {
                 }
             }
             lawnMower[row] = false;
+            return false;
         } else {
-            //pierde
+            return true;
         }
+    }
+    public static boolean winner(){
+        for (int h = 0; h < 5; h++){
+            if (handlePodadora(h)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 
@@ -121,6 +133,8 @@ public class Board {
                 return new PotatoMine();
             case "ECIPlant":
                 return new ECIPlant();
+            case "Evolve":
+                return new Evolve();
             default:
                 throw new POOBvsZOMBIESException(POOBvsZOMBIESException.NO_PLANT);
         }
