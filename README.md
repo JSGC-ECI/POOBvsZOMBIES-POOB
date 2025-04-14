@@ -1,4 +1,4 @@
-# PROYECTO FINAL
+# Proyecto
 JUAN SEBASTIÁN GUAYAZÁN CLAVIJO  
 Programación Orientada a Objetos (ISIS POOB-2 LEC y POOB-201 LAB)     
 Decanatura Ingeniería de Sistemas → Centro de Estudios de Ingeniería de Software    
