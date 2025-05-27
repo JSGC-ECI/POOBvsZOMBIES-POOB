@@ -12,6 +12,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 
+import static presentation.AudioManager.playBackgroundMusic;
+
 /**
  * GamePvsMO represents the graphical user interface for the Player vs Machine (ZombiesOriginal) game.
  * It manages user interactions, game board setup, timer, and game logic through various components and panels.
@@ -85,7 +87,7 @@ public class GamePvsMO extends JFrame {
         setSize(screenSize.width / 2, screenSize.height / 2);
         setLocationRelativeTo(null);
         promptForInitialValues();
-        AudioManager.playBackgroundMusic("presentation/resources/audio/game.wav");
+        //AudioManager.playBackgroundMusic("src/presentation/resources/audio/game.wav");
         prepareElementsBoard();
         prepareElementsMenu();
     }
@@ -184,7 +186,7 @@ public class GamePvsMO extends JFrame {
         add(new Button("West"), BorderLayout.WEST);
 
         JPanel backgroundPanel = new JPanel() {
-            private Image backgroundImage = new ImageIcon("presentation/resources/images/Fondos/backyard.jpg").getImage();
+            private Image backgroundImage = new ImageIcon("src/presentation/resources/images/Fondos/backyard.jpg").getImage();
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -215,7 +217,7 @@ public class GamePvsMO extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                ImageIcon background = new ImageIcon("presentation/resources/images/Plantas/Targetas/SeedBank.png");
+                ImageIcon background = new ImageIcon("src/presentation/resources/images/Plantas/Targetas/SeedBank.png");
                 int imageWidth = background.getIconWidth();
                 int imageHeight = background.getIconHeight();
                 int panelWidth = getWidth();
@@ -226,27 +228,27 @@ public class GamePvsMO extends JFrame {
             }
         };
         plants.setLayout(new FlowLayout(FlowLayout.CENTER,-30, 0));
-        JButton button1 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/Sunflower.png"));
+        JButton button1 = new JButton(new ImageIcon("src/presentation/resources/images/Plantas/Targetas/Sunflower.png"));
         button1.addActionListener(e -> selectPlant("Sunflower"));
         setInvisibleButton(button1);
         plants.add(button1);
-        JButton button2 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/Peashooter.png"));
+        JButton button2 = new JButton(new ImageIcon("src/presentation/resources/images/Plantas/Targetas/Peashooter.png"));
         button2.addActionListener(e -> selectPlant("Peashooter"));
         setInvisibleButton(button2);
         plants.add(button2);
-        JButton button3 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/Wall-nut.png"));
+        JButton button3 = new JButton(new ImageIcon("src/presentation/resources/images/Plantas/Targetas/Wall-nut.png"));
         button3.addActionListener(e -> selectPlant("WallNut"));
         setInvisibleButton(button3);
         plants.add(button3);
-        JButton button4 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/PotatoMine.png"));
+        JButton button4 = new JButton(new ImageIcon("src/presentation/resources/images/Plantas/Targetas/PotatoMine.png"));
         button4.addActionListener(e -> selectPlant("PotatoMine"));
         setInvisibleButton(button4);
         plants.add(button4);
-        JButton button5 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/ECIPlant.png"));
+        JButton button5 = new JButton(new ImageIcon("src/presentation/resources/images/Plantas/Targetas/ECIPlant.png"));
         button5.addActionListener(e -> selectPlant("ECIPlant"));
         setInvisibleButton(button5);
         plants.add(button5);
-        JButton button6 = new JButton(new ImageIcon("presentation/resources/images/Plantas/Targetas/Evolve.png"));
+        JButton button6 = new JButton(new ImageIcon("src/presentation/resources/images/Plantas/Targetas/Evolve.png"));
         button6.addActionListener(e -> selectPlant("Evolve"));
         setInvisibleButton(button6);
         plants.add(button6);
@@ -376,17 +378,17 @@ public class GamePvsMO extends JFrame {
     private String getGifForPlant(String plant) {
         switch (plant) {
             case "Sunflower":
-                return "presentation/resources/images/Plantas/gif/Sunflower.gif";
+                return "src/presentation/resources/images/Plantas/gif/Sunflower.gif";
             case "Peashooter":
-                return "presentation/resources/images/Plantas/gif/Peashooter.gif";
+                return "src/presentation/resources/images/Plantas/gif/Peashooter.gif";
             case "WallNut":
-                return "presentation/resources/images/Plantas/gif/Wall-nut.gif";
+                return "src/presentation/resources/images/Plantas/gif/Wall-nut.gif";
             case "PotatoMine":
-                return "presentation/resources/images/Plantas/gif/PotatoMine.gif";
+                return "src/presentation/resources/images/Plantas/gif/PotatoMine.gif";
             case "ECIPlant":
-                return "presentation/resources/images/Plantas/gif/ECIPlant.gif";
+                return "src/presentation/resources/images/Plantas/gif/ECIPlant.gif";
             case "Evolve":
-                return "presentation/resources/images/Plantas/gif/Evolve.gif";
+                return "src/presentation/resources/images/Plantas/gif/Evolve.gif";
             default:
                 return "";
         }
@@ -406,15 +408,15 @@ public class GamePvsMO extends JFrame {
     private String getGifForZombie(String zombie) {
         switch (zombie) {
             case "Basic":
-                return "presentation/resources/images/Zombies/Basic.gif";
+                return "src/presentation/resources/images/Zombies/Basic.gif";
             case "Conehead":
-                return "presentation/resources/images/Zombies/Conehead.gif";
+                return "src/presentation/resources/images/Zombies/Conehead.gif";
             case "Buckethead":
-                return "presentation/resources/images/Zombies/Buckethead.gif";
+                return "src/presentation/resources/images/Zombies/Buckethead.gif";
             case "Brainstein":
-                return "presentation/resources/images/Zombies/Brainstein.gif";
+                return "src/presentation/resources/images/Zombies/Brainstein.gif";
             case "ECIZombie":
-                return "presentation/resources/images/Zombies/ECIZombie.png";
+                return "src/presentation/resources/images/Zombies/ECIZombie.png";
             default:
                 return "";
         }
