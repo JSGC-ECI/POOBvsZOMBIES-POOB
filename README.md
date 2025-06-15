@@ -45,8 +45,8 @@ Escuela Colombiana de Ingeniería Julio Garavito
 
 ## ⚙️ Tecnologías
 
-- Lenguaje(s): `Java`
-- Herramientas: `BlueJ`, `JUnit`, `PMD`, `Code Coverage`
+- Lenguaje: `Java`
+- Herramientas: `BlueJ`, `JUnit`, `PMD`, `Code Coverage`, `IntelliJ IDEA`
 - Dependencias: JUnit 4, librerías estándar de Java
 
 ---
@@ -61,7 +61,7 @@ git clone https://github.com/JuanSebastianGuayazanClavijoECI/POOBvsZOMBIES-POOB.
 ### Requisitos
 
 * Java 8+
-* BlueJ o Eclipse
+* BlueJ, Eclipse o IntelliJ IDEA 
 * JUnit 4+
 
 ### Instalación
@@ -73,27 +73,18 @@ git clone https://github.com/JuanSebastianGuayazanClavijoECI/POOBvsZOMBIES-POOB.
 
 ## ▶️ Uso
 
-Describe cómo se ejecuta el programa:
+> [!NOTE]\
+> En BlueJ o Eclipse, ejecutar la clase Main o interfaz principal
 
-```bash
-# En BlueJ o Eclipse, ejecutar la clase Main o interfaz principal
-```
-
-También puedes incluir:
-
-* Capturas de pantalla (no disponibles)
-* Video demo o GIF (opcional)
-* Ejemplo de partida entre jugador y máquina
+> [!WARNING]\
+> Asegurarse de que todos los recursos necesarios para la presentacion esten enunciados correctamente
 
 ---
 
 ## 🧪 Pruebas
 
-Describe cómo correr pruebas unitarias o de integración:
-
 ```bash
-# Ejemplo con JUnit
-Abrir clase PuzzleTest o PuzzleContestTest y ejecutar
+javac -d bin src/domain/*.java src/presentation/*.java src/test/GameTest.java
 ```
 
 ---
@@ -180,7 +171,7 @@ Abrir clase PuzzleTest o PuzzleContestTest y ejecutar
  ┣ 📜 .gitignore
  ┗ 📜 LICENSE
 ```
-
+👉 [Diagrama de clases](./POOBvsZOMBIES.asta)
 ---
 
 ## 📌 TODOs / Funcionalidades Futuras
