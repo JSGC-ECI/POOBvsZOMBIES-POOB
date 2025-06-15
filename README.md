@@ -1,4 +1,12 @@
-# 🧠🌻 POOBvsZOMBIES
+# 📌 POOBvsZOMBIES
+
+> ⚠️ Estado: **En desarrollo**
+
+Simulador inspirado en Plants vs Zombies desarrollado como proyecto final del curso de Programación Orientada a Objetos. Explora estrategias entre jugadores y máquinas con nuevos tipos de plantas, zombies, modos de juego y lógica de puntajes.
+
+---
+
+## 👥 Autores
 
 SANTIAGO ROCHA DURAN y MARIA IRMA DIAZ ROZO
 - JUAN SEBASTIÁN GUAYAZÁN CLAVIJO <juan.guayazan-c@mail.escuelaing.edu.co>
@@ -9,104 +17,183 @@ Ingeniería de Sistemas e Ingeniería Estadística
 Escuela Colombiana de Ingeniería Julio Garavito    
 2024-2
 
----
+## 🧠 Índice
 
-## 🎮 Descripción
-
-**POOBvsZOMBIES** es una versión mejorada e inspirada en el clásico videojuego *Plants vs Zombies*. En esta versión se integran nuevas reglas, elementos personalizados, modalidades de juego avanzadas y una arquitectura preparada para extensibilidad.
-
-🌿 El jugador deberá proteger su base usando plantas con habilidades especiales.  
-🧟‍♂️ El oponente controlará hordas de zombies con comportamientos distintos.  
-📊 Se implementó un sistema de puntajes, persistencia, y múltiples modalidades de enfrentamiento.
-
----
-
-## 🧩 Características del Juego
-
-### 🌟 Modalidades de Juego
-- 👤 **Player vs Machine (PvsM)**  
-- 🤖 **Machine vs Machine (MvsM)**  
-- 🎮 **Player vs Player (PvsP)**  
-
-### ⚔️ Elementos del Juego
-
-#### 🌱 Plantas
-- 🌻 *Sunflower* – genera soles ☀️
-- 🟢 *Peashooter* – dispara guisantes
-- 🥔 *PotatoMine* – explota tras activación
-- 🧱 *Wall-nut* – planta defensiva con alta resistencia
-- 🌞 *ECIPlant* – genera soles grandes personalizados
-
-#### 🧟 Zombies
-- 🧠 *Basic* – zombi básico
-- 🔺 *Conehead* – zombi con cono protector
-- 🪖 *Buckethead* – zombi con cubeta resistente
-- 🧠 *Brainstein* – genera cerebros como el girasol
-- 💥 *ECIZombie* – lanza proyectiles POOmBas
-
-### 🧠 Recursos y Sistema de Puntos
-- ☀️ *Soles* para las plantas (25 cada 10 seg)
-- 🧠 *Cerebros* para los zombies (50 cada 10 seg)
-- 🏆 El ganador se define por puntuación o llegada a la casa de Dave
+- [📌 Nombre del Proyecto](#-poobvszombies)
+- [🚀 Características](#-características)
+- [⚙️ Tecnologías](#️-tecnologías)
+- [📦 Instalación](#-instalación-y-requisitos)
+- [▶️ Uso](#️-uso)
+- [🧪 Pruebas](#-pruebas)
+- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
+- [📌 TODOs / Funcionalidades Futuras](#-todos--funcionalidades-futuras)
+- [👥 Autores](#-autores)
+- [📄 Licencia](#-licencia)
 
 ---
 
-## 🔧 Funcionalidades
+## 🚀 Características
 
-✔️ Selección de modalidad de juego  
-✔️ Selección de plantas y zombies disponibles  
-✔️ Configuración de recursos iniciales y tiempo de partida  
-✔️ Simulación de hordas y rondas por oleadas  
-✔️ Control de zombies automáticos (modo supervivencia)  
-✔️ Podadoras automáticas por fila  
-✔️ Herramienta pala para remover plantas sin recuperar soles  
-✔️ Guardado y carga del estado del juego  
-✔️ Log de errores y excepciones personalizadas
+- ✅ Tres modos de juego: PvP, PvM, MvM
+- ✅ Plantas y zombies personalizados (ECIPlant y ECIZombie)
+- ✅ Sistema de recursos: soles y cerebros
+- ✅ Persistencia de partidas y sistema de puntajes
+- ✅ Interfaz gráfica amigable y adaptable
+- ✅ Ideal para fines educativos, desarrollo de lógica y estrategia
 
 ---
 
-## 🧠 Arquitectura
+## ⚙️ Tecnologías
 
-El juego está desarrollado bajo una arquitectura por capas:
+- Lenguaje(s): `Java`
+- Herramientas: `BlueJ`, `JUnit`, `PMD`, `Code Coverage`
+- Dependencias: JUnit 4, librerías estándar de Java
 
-- 🎨 **Capa de presentación:** GUI dinámica para visualización y control
-- 🧠 **Capa de aplicación:** lógica de juego, control de turnos, recursos y reglas
-- 🧩 **Capa de dominio:** entidades, clases de plantas/zombies, estrategias
+---
 
+## 📦 Instalación y Requisitos
+
+### Clonar el repositorio
+```bash
+git clone https://github.com/JuanSebastianGuayazanClavijoECI/POOBvsZOMBIES-POOB.git
+```
+
+### Requisitos
+
+* Java 8+
+* BlueJ o Eclipse
+* JUnit 4+
+
+### Instalación
+
+1. Abrir el proyecto en BlueJ o importar como proyecto Java en Eclipse
+2. Ejecutar las clases de la capa presentación o el simulador principal
+
+---
+
+## ▶️ Uso
+
+Describe cómo se ejecuta el programa:
+
+```bash
+# En BlueJ o Eclipse, ejecutar la clase Main o interfaz principal
+```
+
+También puedes incluir:
+
+* Capturas de pantalla (no disponibles)
+* Video demo o GIF (opcional)
+* Ejemplo de partida entre jugador y máquina
 
 ---
 
 ## 🧪 Pruebas
 
-🔍 Se incluyen pruebas JUnit para:
+Describe cómo correr pruebas unitarias o de integración:
 
-- Validar las reglas del juego  
-- Verificar estrategias automáticas  
-- Simular partidas entre jugadores y máquinas  
-- Comprobar condiciones de victoria/derrota
-
----
-
-## 💾 Persistencia
-
-💽 El estado del juego puede ser **guardado y cargado** para continuar partidas posteriormente.
+```bash
+# Ejemplo con JUnit
+Abrir clase PuzzleTest o PuzzleContestTest y ejecutar
+```
 
 ---
 
-## 📝 Requisitos Técnicos
+## 📁 Estructura del Proyecto
 
-- Java 8 o superior ☕  
-- IDE: Eclipse o BlueJ 💻  
-- JUnit 4+ para pruebas  
-- Manejo de excepciones personalizado
+```bash
+📦 POOBvsZOMBIES-POOB
+ ┣ 📂 src
+ ┃ ┣ 📂 domain
+ ┃ ┃ ┣ 📜 Attacking.java
+ ┃ ┃ ┣ 📜 Basic.java
+ ┃ ┃ ┣ 📜 Board.java
+ ┃ ┃ ┣ 📜 Brainstein.java
+ ┃ ┃ ┣ 📜 Buckethead.java
+ ┃ ┃ ┣ 📜 Cell.java
+ ┃ ┃ ┣ 📜 Character.java
+ ┃ ┃ ┣ 📜 Conehead.java
+ ┃ ┃ ┣ 📜 Defensive.java
+ ┃ ┃ ┣ 📜 ECIPlant.java
+ ┃ ┃ ┣ 📜 ECIZombie.java
+ ┃ ┃ ┣ 📜 Evolve.java
+ ┃ ┃ ┣ 📜 GameManager.java
+ ┃ ┃ ┣ 📜 GameManagerMIvsMO.java
+ ┃ ┃ ┣ 📜 GameManagerMIvsMS.java
+ ┃ ┃ ┣ 📜 GameManagerMSvsMO.java
+ ┃ ┃ ┣ 📜 GameManagerMSvsMS.java
+ ┃ ┃ ┣ 📜 GameManagerPvsMO.java
+ ┃ ┃ ┣ 📜 Generate.java
+ ┃ ┃ ┣ 📜 Movement.java
+ ┃ ┃ ┣ 📜 Pea.java
+ ┃ ┃ ┣ 📜 Peashooter.java
+ ┃ ┃ ┣ 📜 Plant.java
+ ┃ ┃ ┣ 📜 POOBvsZOMBIESException.java
+ ┃ ┃ ┣ 📜 PotatoMine.java
+ ┃ ┃ ┣ 📜 Shovel.java
+ ┃ ┃ ┣ 📜 Sunflower.java
+ ┃ ┃ ┣ 📜 Support.java
+ ┃ ┃ ┣ 📜 WallNut.java
+ ┃ ┃ ┗ 📜 Zombies.java
+ ┃ ┣ 📂 presentation
+ ┃ ┃ ┣ 📂 resources
+ ┃ ┃ ┃ ┣ 📂 images
+ ┃ ┃ ┃ ┃ ┣ 📂 Fondos
+ ┃ ┃ ┃ ┃ ┣ 📂 Nueva carpeta
+ ┃ ┃ ┃ ┃ ┣ 📂 Objetos
+ ┃ ┃ ┃ ┃ ┣ 📂 Pantallas
+ ┃ ┃ ┃ ┃ ┣ 📂 Plantas 
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂 Modos
+ ┃ ┃ ┃ ┃ ┃ ┗ 📂 Tarjetas
+ ┃ ┃ ┃ ┃ ┣ 📂 Zombies
+ ┃ ┃ ┃ ┃ ┃ ┣ 📂 Modos
+ ┃ ┃ ┃ ┃ ┗ ┗ 📂 Tarjetas
+ ┃ ┃ ┃ ┣ 📂 audio
+ ┃ ┃ ┣ 📜 AudioManager.java
+ ┃ ┃ ┣ 📜 Game.java
+ ┃ ┃ ┣ 📜 GameMIvsMO.java
+ ┃ ┃ ┣ 📜 GameMIvsMS.java
+ ┃ ┃ ┣ 📜 GameMSvsMO.java
+ ┃ ┃ ┣ 📜 GameMSvsMS.java
+ ┃ ┃ ┣ 📜 GamePvsMO.java
+ ┃ ┃ ┣ 📜 GamePvsMS.java
+ ┃ ┃ ┣ 📜 PlantsMachines.java
+ ┃ ┃ ┣ 📜 Select.java
+ ┃ ┃ ┣ 📜 Start.java
+ ┃ ┃ ┣ 📜 ZombieMachines.java
+ ┃ ┃ ┗ 📜 ZombiePlantSelector.java          
+ ┃ ┣ 📂 test
+ ┃ ┗ ┗ 📜 GameTest.java
+ ┣ 📂 bin
+ ┃ ┣ 📂 domain
+ ┃ ┗ 📂 presentation
+ ┣ 📂 docs
+ ┃ ┣ 📂 domain
+ ┃ ┃ ┗ 📂 class-use
+ ┃ ┣ 📂 presentation
+ ┃ ┃ ┗ 📂 class-use
+ ┃ ┣ 📂 legal
+ ┃ ┣ 📂 class-use
+ ┃ ┣ 📂 resource-files
+ ┃ ┃ ┗ 📂 fonts
+ ┃ ┗ 📂 script-files
+ ┣ 📜 README.md
+ ┣ 📜 .gitignore
+ ┗ 📜 LICENSE
+```
 
 ---
 
-## 📅 Planificación por ciclos
+## 📌 TODOs / Funcionalidades Futuras
 
-📦 El desarrollo se realizó en **4 versiones**, cada una con entregables definidos:
+* [ ] Añadir sonidos y animaciones
+* [ ] Mejorar interfaz gráfica con controles dinámicos
+* [ ] Integrar un sistema de dificultad progresiva
 
-1. **Versión 1:** Configuración básica (PvsZombiesOriginal)  
-2. **Versión 2:** Persistencia y todos los elementos del juego  
-3. **Versión 3:** Integración de estrategias personalizadas  
-4. **Versión 4:** Pruebas de aceptación y mejoras finales
+---
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo propósitos académicos y educativos. Puedes consultar el archivo [LICENSE](./LICENSE) para más información.
+
+---
+
