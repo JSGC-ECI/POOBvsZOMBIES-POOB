@@ -166,10 +166,7 @@ javac -d bin src/domain/*.java src/presentation/*.java src/test/GameTest.java
  ┃ ┣ 📂 class-use
  ┃ ┣ 📂 resource-files
  ┃ ┃ ┗ 📂 fonts
- ┃ ┗ 📂 script-files
- ┣ 📜 README.md
- ┣ 📜 .gitignore
- ┗ 📜 LICENSE
+ ┗ ┗ 📂 script-files
 ```
 👉 [Diagrama de clases](./POOBvsZOMBIES.asta)
 ---
