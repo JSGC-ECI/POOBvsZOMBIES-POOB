@@ -2,7 +2,7 @@
 
 > ⚠️ Estado: **En desarrollo**
 
-Simulador inspirado en Plants vs Zombies desarrollado como proyecto final del curso de Programación Orientada a Objetos. Explora estrategias entre jugadores y máquinas con nuevos tipos de plantas, zombies, modos de juego y lógica de puntajes.
+Simulador inspirado en Plants vs Zombies cada uno con habilidades y características propias. El objetivo principal es administrar recursos y diseñar tácticas para defenderse o atacar según el modo de juego seleccionado. Explora estrategias entre jugadores y máquinas con nuevos tipos de plantas, zombies, modos de juego y lógica de puntajes.
 
 ---
 
