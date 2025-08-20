@@ -73,11 +73,33 @@ git clone https://github.com/JuanSebastianGuayazanClavijoECI/POOBvsZOMBIES-POOB.
 
 ## ▶️ Uso
 
-> [!NOTE]\
-> En BlueJ o Eclipse, ejecutar la clase Main o interfaz principal
+Perfecto 🙌 Aquí te dejo cómo quedaría la **sección de Uso** en tu README de **POOBvsZOMBIES**, con el formato que me compartiste:
 
-> [!WARNING]\
-> Asegurarse de que todos los recursos necesarios para la presentacion esten enunciados correctamente
+---
+
+## ▶️ Uso
+
+```bash
+# Desde la carpeta del proyecto
+javac src/presentation/Start.java
+java src/presentation/Start
+```
+
+> \[!NOTE]
+> Asegúrate de tener instalado **Java 17 o superior** para garantizar la compatibilidad.
+
+> \[!TIP]
+> Puedes ejecutar directamente la clase `Start` desde tu IDE favorito (ej. **IntelliJ IDEA**, **BlueJ**, **Eclipse**) sin necesidad de compilar manualmente.
+
+> \[!IMPORTANT]
+> La carpeta `resources` dentro de `presentation` debe mantenerse con su estructura, ya que contiene imágenes y sonidos necesarios para el juego.
+
+> \[!WARNING]
+> Si se cambian los nombres de las imágenes o audios, el juego podría no cargarlos correctamente y fallar al iniciar.
+
+> \[!CAUTION]
+> No modifiques los paquetes `domain` y `presentation` sin revisar las dependencias, ya que contienen la lógica principal y la interfaz gráfica.
+
 
 ---
 
