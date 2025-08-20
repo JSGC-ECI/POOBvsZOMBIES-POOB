@@ -46,7 +46,7 @@ Escuela Colombiana de Ingeniería Julio Garavito
 ## ⚙️ Tecnologías
 
 - Lenguaje: `Java`
-- Herramientas: `BlueJ`, `JUnit`, `PMD`, `Code Coverage`, `IntelliJ IDEA`
+- Herramientas: `BlueJ`, `JUnit`, `IntelliJ IDEA`
 - Dependencias: JUnit 4, librerías estándar de Java
 
 ---
