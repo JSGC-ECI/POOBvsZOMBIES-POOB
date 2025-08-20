@@ -19,16 +19,16 @@ Escuela Colombiana de Ingeniería Julio Garavito
 
 ## 🧠 Índice
 
-- [📌 Nombre del Proyecto](#-poobvszombies)
-- [🚀 Características](#-características)
-- [⚙️ Tecnologías](#️-tecnologías)
-- [📦 Instalación](#-instalación-y-requisitos)
-- [▶️ Uso](#️-uso)
-- [🧪 Pruebas](#-pruebas)
-- [📁 Estructura del Proyecto](#-estructura-del-proyecto)
-- [📌 TODOs / Funcionalidades Futuras](#-todos--funcionalidades-futuras)
-- [👥 Autores](#-autores)
-- [📄 Licencia](#-licencia)
+- 📌 [Nombre del Proyecto](#-poobvszombies)
+- 🚀 [Características](#-características)
+- ⚙️ [Tecnologías](#️-tecnologías)
+- 📦 [Instalación](#-instalación-y-requisitos)
+- ▶️ [Uso](#️-uso)
+- 🧪 [Pruebas](#-pruebas)
+- 📁 [Estructura del Proyecto](#-estructura-del-proyecto)
+- 📌 [TODOs / Funcionalidades Futuras](#-todos--funcionalidades-futuras)
+- 👥 [Autores](#-autores)
+- 📄 [Licencia](#-licencia)
 
 ---
 
